@@ -19,6 +19,17 @@ body {
     text-decoration: none;
 }
 
+.icon {
+    display:block;
+    margin: 0 auto;
+}
+
+.icon-qr-code {
+    width: 21px;
+    height: 20px;
+    background: url(../img/icon-qr-code.png);
+}
+
 /* Fixed top navbar */
 
 .navbar {
@@ -59,6 +70,14 @@ body {
     font-weight: 100;
 }
 
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
 /* Content */
 
 .content {
@@ -80,14 +99,14 @@ body {
 
 .domik .domik-roof {
     width: 302px;
-    height: 126px;
+    height: 106px;
     background: url(../img/domik-roof.png) no-repeat;
 }
 
 .domik .domik-body {
     width: 300px;
     min-height: 100px;
-    height: 200px;
+    height: 205px;
     background-color: #DFEAFF;
     border: 1px solid #c9d2e5;
     border-top: none;
@@ -96,7 +115,8 @@ body {
 
 .domik .domik-footer {
     width: 300px;
-    height: 50px;
+    min-height: 60px;
+    height: auto;
     background-color: #DFEAFF;
     border: 1px solid #c9d2e5;
     border-top: none;
@@ -139,11 +159,21 @@ body {
     background: linear-gradient(#ffdf60,#fc0);
 }
 
+.login-form .button:hover {
+    cursor: pointer;
+    background: #fd5;
+    background: -webkit-linear-gradient(#ffe681, #ffd428);
+    background: -o-linear-gradient(#ffe681, #ffd428);
+    background: linear-gradient(#ffe681, #ffd428);
+}
+
 .button-group {
     margin-bottom: 40px;
 }
 
 .button-group .button {
+    text-align: center;
+    padding: 5px;
     float: left;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -163,6 +193,7 @@ body {
 
 .login-form .button.button-qr-login {
     width: 20%;
+    margin: 0 auto;
 }
 
 .check-foreign-computer {
@@ -250,6 +281,31 @@ body {
 
 .social-icons-sprite.ok:hover {
     background-position: -155px 30px;
+}
+
+/* Help buttons */
+
+.button-help {
+    text-align: center;
+    padding: 20px;
+}
+
+.button-simple {
+    border-radius: 3px;
+    min-height: 24px;
+    color: #000;
+    text-decoration: none;
+    font-size: 13px;
+    border: 1px solid #9097A6;
+    padding: 5px;
+}
+
+.button-simple:hover {
+    border-color: #808793;
+}
+
+.button-bold-accent {
+    font-weight: bold;
 }
 
 /* Fixed bottom footer */

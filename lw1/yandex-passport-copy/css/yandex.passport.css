@@ -84,17 +84,15 @@ body {
     margin-top: 70px;
     width: 100%;
     height: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: block;
+
 }
 
 .domik {
     width: 300px;
     height: 293px;
-    position: absolute;
-    left: 38%;
-    margin-top: 50px;
+    margin: 50px auto;
+    padding-top: 50px;
 }
 
 .domik .domik-roof {
@@ -121,6 +119,13 @@ body {
     border: 1px solid #c9d2e5;
     border-top: none;
     margin-left: 1px;
+}
+
+@media (max-width: 768px) {
+
+    .domik {
+        padding-top: 20px;
+    }
 }
 
 /* Login form (in domik) */
@@ -342,4 +347,17 @@ body {
 
 .footer .copyright {
     color: #7f7f7f;
+}
+
+@media (max-width: 768px) {
+
+    .footer .language-block {
+        text-align: left;
+    }
+
+    .footer .copyright {
+        text-align: center;
+        padding: 10px;
+        height: auto;
+    }
 }

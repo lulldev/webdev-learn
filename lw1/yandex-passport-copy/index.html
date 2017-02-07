@@ -8,7 +8,6 @@
   <title>Авторизация</title>
 </head>
 <body>
-
     <div class="navbar">
       <div class="grid">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -23,8 +22,27 @@
     <div class="content">
       <div class="domik">
         <div class="domik-roof"></div>
-        <div class="domik-body"></div>
-        <div class="domik-footer"></div>
+        <div class="domik-body">
+          <form class="login-form" action="" method="post">
+            <input type="text" name="login" placeholder="логин" required /><br />
+            <input type="password" name="password" placeholder="пароль" required />
+            <div class="button-group">
+              <button class="button button-login" type="submit">Войти</button>
+              <button class="button button-qr-login">qr</button>
+            </div>
+            <label class="check-foreign-computer">
+              <input type="checkbox" name="foreign-computer" /> Чужой компьютер
+            </label>
+            <div class="social-buttons">
+              <div class="social-icons-sprite vk"></div>
+              <div class="social-icons-sprite facebook"></div>
+              <div class="social-icons-sprite twitter"></div>
+              <div class="social-icons-sprite mailru"></div>
+              <div class="social-icons-sprite google"></div>
+              <div class="social-icons-sprite ok"></div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
 

@@ -3,9 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Shapes</title>
-  <script language="JavaScript" src="js/shapes_program.js"></script>
+  <script language="javascript" src="js/shapes_program.js"></script>
 </head>
 <body>
-
+<script>
+  ShapeProgram.InitProgram();
+  window.onload = function() {
+    console.dir(new CCircle());
+  };
+</script>
 </body>
 </html>

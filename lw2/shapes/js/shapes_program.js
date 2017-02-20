@@ -28,9 +28,4 @@ var ShapeProgram = {
     }
 };
 
-ShapeProgram.InitProgram();
-
-window.onload = function() {
-    
-};
 

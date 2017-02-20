@@ -1,22 +1,23 @@
-function Shape(size, fillColor, borderColor) {
-    this.size = size;
-    this.fillColor = fillColor;
-    this.borderColor = borderColor;
+function CShape(fillColor, borderColor) {
+    this.setFillColor(fillColor);
+    this.setBorderColor(borderColor);
 }
 
-Shape.prototype.setFillColor = function(value) {
-    this.fillColor = value;
+CShape.prototype.setFillColor = function(fillColorValue) {
+    fillColorValue != undefined ?
+        this.fillColor = fillColorValue : this.fillColor = '#fff';
 };
 
-Shape.prototype.getFillColor = function() {
+CShape.prototype.getFillColor = function() {
     return this.fillColor;
 };
 
-Shape.prototype.setBorderColor = function(value) {
-    this.borderColor = value;
+CShape.prototype.setBorderColor = function(borderColorValue) {
+    borderColorValue != undefined ?
+        this.borderColor = borderColorValue : this.borderColor = '#000';
 };
 
-Shape.prototype.getBorderColor = function() {
+CShape.prototype.getBorderColor = function() {
     return this.borderColor;
 };
 

@@ -1,3 +1,5 @@
+'use strict';
+
 function CRectangle(fillColor = '#fff', borderColor = '#000', x1 = 10, y1 = 20, x2 = 40, y2 = 20) {
     CShape.apply(this, arguments);
     this.x1 = x1;
@@ -10,17 +12,17 @@ function CRectangle(fillColor = '#fff', borderColor = '#000', x1 = 10, y1 = 20, 
 CRectangle.prototype = Object.create(CShape.prototype);
 CRectangle.prototype.constructor = CRectangle;
 
-CRectangle.prototype.calculateArea = function() {
-    var a  = Math.abs(this.x2 - this.x1),
-        b  = Math.abs(this.y2 - this.y1);
+CRectangle.prototype.calculateSides = function() {
+    return [Math.abs(this.x2 - this.x1), Math.abs(this.y2 - this.y1)];
+};
 
+CRectangle.prototype.calculateArea = function() {
+    let [a, b] = this.calculateSides();
     return parseFloat((a * b).toFixed(2));
 };
 
 CRectangle.prototype.calculatePerimeter = function() {
-    var a  = Math.abs(this.x2 - this.x1),
-        b  = Math.abs(this.y2 - this.y1);
-
+    let [a, b] = this.calculateSides();
     return parseFloat((2 * (a + b)).toFixed(2));
 };
 

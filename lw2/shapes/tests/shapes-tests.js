@@ -76,6 +76,11 @@ describe("CRectangle testing", function() {
 
         var rectangle = new CRectangle('#ccc', '#000', 10, 20, 50, 30);
 
+        it("Calculate sides", function() {
+            assert.typeOf(rectangle.calculateSides(), 'array');
+            assert.equal(rectangle.calculateSides().join(), '40,10');
+        });
+
         it("Calculate perimeter", function() {
             assert.typeOf(rectangle.calculatePerimeter(), 'number');
             assert.equal(rectangle.calculatePerimeter(), 100);
@@ -121,6 +126,11 @@ describe("CTriangle testing", function() {
     describe("Calculations", function() {
 
         var triangle = new CTriangle('#ccc', '#000', 10, 20, 50, 30, 50, 60);
+
+        it("Calculate sides", function() {
+            assert.typeOf(triangle.calculateSides(), 'array');
+            assert.equal(triangle.calculateSides().join(), '3.080070288241023,2.340347319320716,3.5565588200778455');
+        });
 
         it("Calculate perimeter", function() {
             assert.typeOf(triangle.calculatePerimeter(), 'number');

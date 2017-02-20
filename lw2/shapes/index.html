@@ -4,13 +4,41 @@
   <meta charset="UTF-8">
   <title>Shapes</title>
   <script language="javascript" src="js/shapes_program.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/shapes.css">
 </head>
 <body>
+
+<div class="container application-container">
+  <div class="row">
+    <div class="jumbotron">
+      <h3>LW #2 (Shapes)</h3>
+      <p>Student PS-22 Kalagin Ivan</p>
+      <a href="https://github.com/lulldev/webdev-learn/tree/master/lw2/shapes" class="btn btn-default">See GitHub repo</a>
+    </div>
+    <div class="col-lg-8">
+      <label>Canvas output:</label>
+      <canvas id="canvas-area"></canvas>
+    </div>
+    <div class="col-lg-4">
+      <label>Draw configurator:</label>
+      <form class="form">
+        <div class="form-group">
+          <select name="shape-type" class="form-control">
+            <option value="">Choose shape type</option>
+            <option value="circle">Circle</option>
+            <option value="rectangle">Rectangle</option>
+            <option value="triangle">Triangle</option>
+          </select>
+          <div class="help-block">Select type and input shape parameters</div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 <script>
   ShapeProgram.InitProgram();
-  window.onload = function() {
-    console.dir(new CCircle());
-  };
 </script>
 </body>
 </html>

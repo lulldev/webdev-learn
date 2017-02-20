@@ -1,3 +1,5 @@
+'use strict';
+
 function CCircle(fillColor = '#fff', borderColor = '#000', radius = 50, centerX = 200, centerY = 200) {
     CShape.apply(this, arguments);
     this.radius = radius;

@@ -1,3 +1,5 @@
+'use strict';
+
 function CTriangle(fillColor = '#fff', borderColor = '#000', x1 = 10, y1 = 20, x2 = 40, y2 = 20, x3 = 50, y3 = 60) {
     CShape.apply(this, arguments);
     this.x1 = x1;

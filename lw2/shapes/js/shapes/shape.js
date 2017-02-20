@@ -1,3 +1,5 @@
+'use strict';
+
 function CShape(fillColor, borderColor) {
     this.setFillColor(fillColor);
     this.setBorderColor(borderColor);

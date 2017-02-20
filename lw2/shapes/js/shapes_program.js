@@ -1,3 +1,5 @@
+'use strict';
+
 var ShapeProgram = {
     /*
      Loader solution by joshuamabina
@@ -25,6 +27,11 @@ var ShapeProgram = {
         this.LoadScript('js/shapes/rectangle.js');
         this.LoadScript('js/shapes/shape.js');
         this.LoadScript('js/shapes/triangle.js');
+    },
+
+    // todo
+    InitFormEvents: function () {
+
     }
 };
 

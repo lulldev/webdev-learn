@@ -70,7 +70,7 @@ CTriangle.prototype.draw = function(canvasAreaId) {
 
     var canvas = document.getElementById(this.canvasAreaId);
     var context = canvas.getContext('2d');
-
+    
     context.clearRect(0, 0, canvas.width, canvas.height);
 
     context.beginPath();

@@ -50,28 +50,28 @@ document.getElementsByClassName('draw-shape')[0].addEventListener("click", funct
         case "circle":
             shapeParams = {
                 radius: parseFloat(document.getElementsByClassName('radius')[0].value.toString()),
-                centerX: parseFloat(document.getElementsByClassName('x-coord')[0].value.toString()),
-                centerY: parseFloat(document.getElementsByClassName('y-coord')[0].value.toString())
+                centerX: parseFloat(document.getElementsByClassName('circle-x-coord')[0].value.toString()),
+                centerY: parseFloat(document.getElementsByClassName('circle-y-coord')[0].value.toString())
             };
             shapeProgram.DisplayCircle(shapeColorParams, shapeParams);
             break;
         case "rectangle":
             shapeParams = {
-                x1: parseFloat(document.getElementsByClassName('x1-coord')[0].value.toString()),
-                y1: parseFloat(document.getElementsByClassName('y1-coord')[0].value.toString()),
-                x2: parseFloat(document.getElementsByClassName('x2-coord')[0].value.toString()),
-                y2: parseFloat(document.getElementsByClassName('y2-coord')[0].value.toString())
+                x1: parseFloat(document.getElementsByClassName('rectangle-x1-coord')[0].value.toString()),
+                y1: parseFloat(document.getElementsByClassName('rectangle-y1-coord')[0].value.toString()),
+                x2: parseFloat(document.getElementsByClassName('rectangle-x2-coord')[0].value.toString()),
+                y2: parseFloat(document.getElementsByClassName('rectangle-y2-coord')[0].value.toString())
             };
             shapeProgram.DisplayRectangle(shapeColorParams, shapeParams);
             break;
         case "triangle":
             shapeParams = {
-                x1: parseFloat(document.getElementsByClassName('x1-coord')[0].value.toString()),
-                y1: parseFloat(document.getElementsByClassName('y1-coord')[0].value.toString()),
-                x2: parseFloat(document.getElementsByClassName('x2-coord')[0].value.toString()),
-                y2: parseFloat(document.getElementsByClassName('y2-coord')[0].value.toString()),
-                x3: parseFloat(document.getElementsByClassName('x3-coord')[0].value.toString()),
-                y3: parseFloat(document.getElementsByClassName('y3-coord')[0].value.toString())
+                x1: parseFloat(document.getElementsByClassName('triangle-x1-coord')[0].value.toString()),
+                y1: parseFloat(document.getElementsByClassName('triangle-y1-coord')[0].value.toString()),
+                x2: parseFloat(document.getElementsByClassName('triangle-x2-coord')[0].value.toString()),
+                y2: parseFloat(document.getElementsByClassName('triangle-y2-coord')[0].value.toString()),
+                x3: parseFloat(document.getElementsByClassName('triangle-x3-coord')[0].value.toString()),
+                y3: parseFloat(document.getElementsByClassName('triangle-y3-coord')[0].value.toString())
             };
             shapeProgram.DisplayTriangle(shapeColorParams, shapeParams);
             break;

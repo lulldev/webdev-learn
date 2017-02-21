@@ -89,10 +89,53 @@ describe("CCircle testing", function() {
 
 });
 
+////////////////////////////////////////////////////////////////////////////
+
+
 describe("CRectangle testing", function() {
 
     describe("Init rectangle", function() {
 
+        it("Init with wrong values", function() {
+
+            expect(
+                function () {
+                    new CRectangle({
+                        wrongparam: '#ddd',
+                        borderColorValue: '#ddd'
+                    });
+                }
+            ).to.throw(ReferenceError, 'Shape colors params required');
+
+            expect(
+                function () {
+                    new CRectangle({
+                        fillColorValue: 'ddd',
+                        borderColorValue: '#ddd'
+                    });
+                }
+            ).to.throw(RangeError, 'Invalid shape colors');
+
+            expect(
+                function () {
+                    new CRectangle({
+                        fillColorValue: '#ddd',
+                        borderColorValue: '#ddd'
+                    });
+                }
+            ).to.not.throw();
+            
+            expect(
+                function () {
+                    new CRectangle(
+                        {fillColorValue: '#ddd', borderColorValue: '#ddd'},
+                        {x1: -10, y1: 20, x2: 200, y2: -1}
+                    );
+                }
+            ).to.throw(RangeError, "Invalid rectangle params");
+
+        });
+        
         it("Init with default values", function() {
 
             var rectangle = new CRectangle();
@@ -106,8 +149,10 @@ describe("CRectangle testing", function() {
 
         it("Init with optional values", function() {
 
-            var rectangle = new CRectangle('#ccc', '#000', 100, 200, 300, 200);
-
+            var rectangle = new CRectangle(
+                {fillColorValue: '#ccc', borderColorValue: '#000'},
+                {x1: 100, y1: 200, x2: 300, y2: 200}
+            );
             assert.equal(rectangle.x1, 100);
             assert.equal(rectangle.y2, 200);
             assert.equal(rectangle.x2, 300);
@@ -120,7 +165,10 @@ describe("CRectangle testing", function() {
 
     describe("Calculations", function() {
 
-        var rectangle = new CRectangle('#ccc', '#000', 10, 20, 50, 30);
+        var rectangle = new CRectangle(
+            {fillColorValue: '#ccc', borderColorValue: '#000'},
+            {x1: 10, y1: 20, x2: 50, y2: 30}
+        );
 
         it("Calculate sides", function() {
             assert.typeOf(rectangle.calculateSides(), 'array');

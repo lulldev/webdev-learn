@@ -1,7 +1,6 @@
 'use strict';
 
 function CCircle(shapeColorParams, shapeParams) {
-    console.log(shapeParams);
     CShape.apply(this, arguments);
 
     if (shapeParams === undefined)
@@ -23,7 +22,7 @@ function CCircle(shapeColorParams, shapeParams) {
 CCircle.prototype = Object.create(CShape.prototype);
 CCircle.prototype.constructor = CCircle;
 
-CShape.prototype.validateParams = function(shapeParams) {
+CCircle.prototype.validateParams = function(shapeParams) {
     if (!shapeParams.hasOwnProperty('radius') || !shapeParams.hasOwnProperty('centerX') ||
             !shapeParams.hasOwnProperty('centerY'))
     {

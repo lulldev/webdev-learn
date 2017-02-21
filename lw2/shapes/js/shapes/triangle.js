@@ -64,7 +64,26 @@ CTriangle.prototype.calculatePerimeter = function() {
     return parseFloat((2 * (a + b + c)).toFixed(2));
 };
 
-CTriangle.prototype.draw = function() {
+CTriangle.prototype.draw = function(canvasAreaId) {
 
+    this.canvasAreaId = canvasAreaId;
+
+    var canvas = document.getElementById(this.canvasAreaId);
+    var context = canvas.getContext('2d');
+
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    context.beginPath();
+    context.moveTo(this.x1, this.y1);
+    context.lineTo(this.x2, this.y2);
+    context.lineTo(this.x3, this.y3);
+    context.closePath();
+
+    context.lineWidth = 1;
+    context.strokeStyle = this.getBorderColor();
+    context.stroke();
+
+    context.fillStyle = this.getFillColor();
+    context.fill();
 };
 

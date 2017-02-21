@@ -44,6 +44,17 @@ CCircle.prototype.calculatePerimeter = function() {
 };
 
 CCircle.prototype.draw = function(canvasAreaId) {
-    this.canvasArea = document.querySelector("#" + canvasAreaId);
-    console.log(canvasAreaId);
+    this.canvasAreaId = canvasAreaId;
+
+    var canvas = document.getElementById(this.canvasAreaId);
+    var context = canvas.getContext('2d');
+
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.beginPath();
+    context.arc(this.centerX, this.centerY, this.radius, 0, 2 * Math.PI, false);
+    context.fillStyle = this.getFillColor();
+    context.fill();
+    context.lineWidth = 0.5;
+    context.strokeStyle = this.getBorderColor();
+    context.stroke();
 };

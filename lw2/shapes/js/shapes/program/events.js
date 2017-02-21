@@ -42,7 +42,7 @@ document.getElementsByClassName('draw-shape')[0].addEventListener("click", funct
     let selectedType = document.getElementsByClassName('shape-type')[0].value.toString();
     let shapeColorParams = {
         fillColorValue: document.getElementsByClassName('fill-color')[0].value.toString(),
-        borderColorValue: document.getElementsByClassName('bg-color')[0].value.toString()
+        borderColorValue: document.getElementsByClassName('border-color')[0].value.toString()
     };
     let shapeParams = {};
 
@@ -53,7 +53,7 @@ document.getElementsByClassName('draw-shape')[0].addEventListener("click", funct
                 centerX: parseFloat(document.getElementsByClassName('x-coord')[0].value.toString()),
                 centerY: parseFloat(document.getElementsByClassName('y-coord')[0].value.toString())
             };
-            shapeProgram.DrawCircle(shapeColorParams, shapeParams);
+            shapeProgram.DisplayCircle(shapeColorParams, shapeParams);
             break;
         case "rectangle":
             shapeParams = {
@@ -62,7 +62,7 @@ document.getElementsByClassName('draw-shape')[0].addEventListener("click", funct
                 x2: parseFloat(document.getElementsByClassName('x2-coord')[0].value.toString()),
                 y2: parseFloat(document.getElementsByClassName('y2-coord')[0].value.toString())
             };
-            shapeProgram.DrawRectangle(shapeColorParams, shapeParams);
+            shapeProgram.DisplayRectangle(shapeColorParams, shapeParams);
             break;
         case "triangle":
             shapeParams = {
@@ -73,7 +73,7 @@ document.getElementsByClassName('draw-shape')[0].addEventListener("click", funct
                 x3: parseFloat(document.getElementsByClassName('x3-coord')[0].value.toString()),
                 y3: parseFloat(document.getElementsByClassName('y3-coord')[0].value.toString())
             };
-            shapeProgram.DrawTriangle(shapeColorParams, shapeParams);
+            shapeProgram.DisplayTriangle(shapeColorParams, shapeParams);
             break;
     }
 });

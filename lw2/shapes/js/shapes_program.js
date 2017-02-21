@@ -1,9 +1,9 @@
 'use strict';
 
-function ShapeProgram(canvasArea)
+function ShapeProgram(canvasAreaId)
 {
-    canvasArea === undefined ?
-        this.canvasArea = "#canvas-area" : this.canvasArea = canvasArea;
+    canvasAreaId === undefined ?
+        this.canvasAreaId = "canvas-area" : this.canvasAreaId = canvasArea;
 
     this.LoadScript('js/shapes/shape.js');
     this.LoadScript('js/shapes/circle.js');
@@ -55,24 +55,22 @@ ShapeProgram.prototype.ResetForm = function ()
     }
 };
 
-ShapeProgram.prototype.DrawCircle = function (shapeColorParams, shapeParams)
+ShapeProgram.prototype.DisplayCircle = function (shapeColorParams, shapeParams)
 {
-    // this.canvasArea
-    console.log(arguments);
+    let circle = new CCircle(shapeColorParams, shapeParams);
+    circle.draw(this.canvasAreaId);
 };
 
-ShapeProgram.prototype.DrawRectangle = function (shapeColorParams, shapeParams)
+ShapeProgram.prototype.DisplayRectangle = function (shapeColorParams, shapeParams)
 {
-    // this.canvasArea
-    console.log(arguments);
-
+    let rectangle = new CRectangle(shapeColorParams, shapeParams);
+    rectangle.draw(this.canvasAreaId);
 };
 
-ShapeProgram.prototype.DrawTriangle = function (shapeColorParams, shapeParams)
+ShapeProgram.prototype.DisplayTriangle = function (shapeColorParams, shapeParams)
 {
-    // this.canvasArea
-    console.log(arguments);
-
+    let triangle = new CTriangle(shapeColorParams, shapeParams);
+    triangle.draw(this.canvasAreaId);
 };
 
 

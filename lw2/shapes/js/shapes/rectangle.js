@@ -53,6 +53,22 @@ CRectangle.prototype.calculatePerimeter = function() {
     return parseFloat((2 * (a + b)).toFixed(2));
 };
 
-CRectangle.prototype.draw = function() {
+CRectangle.prototype.draw = function(canvasAreaId) {
 
+    this.canvasAreaId = canvasAreaId;
+
+    var canvas = document.getElementById(this.canvasAreaId);
+    var context = canvas.getContext('2d');
+
+    let [a, b] = this.calculateSides();
+
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    context.beginPath();
+    context.fillStyle = this.getFillColor();
+    context.lineWidth = 0.5;
+    context.strokeStyle = this.getBorderColor();
+
+    context.fillRect(this.x1, this.y1, a, b);
+    context.strokeRect(this.x1, this.y1, a, b);
 };

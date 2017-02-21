@@ -55,9 +55,16 @@ ShapeProgram.prototype.ResetForm = function ()
     }
 };
 
+ShapeProgram.prototype.UpdateAreaAndPerimeter = function (area, perimeter)
+{
+    document.getElementsByClassName('shape-area')[0].innerHTML = area;
+    document.getElementsByClassName('shape-perimeter')[0].innerHTML = perimeter;
+};
+
 ShapeProgram.prototype.DisplayCircle = function (shapeColorParams, shapeParams)
 {
     let circle;
+
     try
     {
         circle = new CCircle(shapeColorParams, shapeParams);
@@ -69,6 +76,7 @@ ShapeProgram.prototype.DisplayCircle = function (shapeColorParams, shapeParams)
     }
 
     circle.draw(this.canvasAreaId);
+    this.UpdateAreaAndPerimeter(circle.calculateArea(), circle.calculatePerimeter());
 };
 
 ShapeProgram.prototype.DisplayRectangle = function (shapeColorParams, shapeParams)
@@ -86,6 +94,7 @@ ShapeProgram.prototype.DisplayRectangle = function (shapeColorParams, shapeParam
     }
 
     rectangle.draw(this.canvasAreaId);
+    this.UpdateAreaAndPerimeter(rectangle.calculateArea(), rectangle.calculatePerimeter());
 };
 
 ShapeProgram.prototype.DisplayTriangle = function (shapeColorParams, shapeParams)
@@ -104,6 +113,7 @@ ShapeProgram.prototype.DisplayTriangle = function (shapeColorParams, shapeParams
     }
 
     triangle.draw(this.canvasAreaId);
+    this.UpdateAreaAndPerimeter(triangle.calculateArea(), triangle.calculatePerimeter());
 };
 
 

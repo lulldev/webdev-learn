@@ -2,6 +2,46 @@ describe("CCircle testing", function() {
 
     describe("Init circle", function() {
 
+        it("Init with wrong values", function() {
+
+            expect(
+                function () {
+                    new CCircle({
+                        wrongparam: '#ddd',
+                        borderColorValue: '#ddd'
+                    });
+                }
+            ).to.throw(ReferenceError, 'Shape colors params required');
+
+            expect(
+                function () {
+                    new CCircle({
+                        fillColorValue: 'ddd',
+                        borderColorValue: '#ddd'
+                    });
+                }
+            ).to.throw(RangeError, 'Invalid shape colors');
+
+            expect(
+                function () {
+                    new CCircle({
+                        fillColorValue: '#ddd',
+                        borderColorValue: '#ddd'
+                    });
+                }
+            ).to.not.throw();
+
+            expect(
+                function () {
+                    new CCircle(
+                        {fillColorValue: '#ddd', borderColorValue: '#ddd'},
+                        {radius: -10, centerX: 20, centerY: 200}
+                    );
+                }
+            ).to.throw(RangeError);
+
+        });
+
         it("Init with default values", function() {
 
             var circle = new CCircle();
@@ -15,7 +55,10 @@ describe("CCircle testing", function() {
 
         it("Init with optional values", function() {
 
-            var circle = new CCircle('#ccc', '#000', 10, 20);
+            var circle = new CCircle(
+                {fillColorValue: '#ccc', borderColorValue: '#000'},
+                {radius: 10, centerX: 20, centerY: 200}
+            );
 
             assert.equal(circle.radius, 10);
             assert.equal(circle.centerX, 20);
@@ -28,7 +71,10 @@ describe("CCircle testing", function() {
 
     describe("Calculations", function() {
 
-        var circle = new CCircle('#ccc', '#000', 10, 20);
+        var circle = new CCircle(
+            {fillColorValue: '#ccc', borderColorValue: '#000'},
+            {radius: 10, centerX: 20, centerY: 200}
+        );
 
         it("Calculate perimeter", function() {
             assert.typeOf(circle.calculatePerimeter(), 'number');

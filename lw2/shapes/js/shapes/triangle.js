@@ -1,17 +1,49 @@
 'use strict';
 
-function CTriangle(fillColor = '#fff', borderColor = '#000', x1 = 10, y1 = 20, x2 = 40, y2 = 20, x3 = 50, y3 = 60) {
+function CTriangle(shapeColorParams, shapeParams) {
     CShape.apply(this, arguments);
-    this.x1 = x1;
-    this.y1 = y1;
-    this.x2 = x2;
-    this.y2 = y2;
-    this.x3 = x3;
-    this.y3 = y3;
+
+    if (shapeParams === undefined)
+    {
+        shapeParams = {
+            x1: 10,
+            y1: 20,
+            x2: 40,
+            y2: 20,
+            x3: 50,
+            y3: 60
+        };
+    }
+
+    this.validateParams(shapeParams);
+
+    this.x1 = shapeParams.x1;
+    this.y1 = shapeParams.y1;
+    this.x2 = shapeParams.x2;
+    this.y2 = shapeParams.y2;
+    this.x3 = shapeParams.x3;
+    this.y3 = shapeParams.y3;
 }
 
 CTriangle.prototype = Object.create(CShape.prototype);
 CTriangle.prototype.constructor = CTriangle;
+
+
+CTriangle.prototype.validateParams = function(shapeParams) {
+    if (!shapeParams.hasOwnProperty('x1') || !shapeParams.hasOwnProperty('y1') ||
+        !shapeParams.hasOwnProperty('x2') || !shapeParams.hasOwnProperty('y2') ||
+        !shapeParams.hasOwnProperty('x3') || !shapeParams.hasOwnProperty('y3'))
+    {
+        throw ReferenceError("Triangle params required");
+    }
+
+    if (shapeParams.x1 < 0 || shapeParams.y1 < 0 ||
+        shapeParams.x2 < 0 || shapeParams.y2 < 0 ||
+        shapeParams.x3 < 0 || shapeParams.y3 < 0)
+    {
+        throw RangeError("Invalid triangle params");
+    }
+};
 
 CTriangle.prototype.calculateSides = function() {
     return [

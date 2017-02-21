@@ -124,7 +124,7 @@ describe("CRectangle testing", function() {
                     });
                 }
             ).to.not.throw();
-            
+
             expect(
                 function () {
                     new CRectangle(
@@ -192,6 +192,46 @@ describe("CTriangle testing", function() {
 
     describe("Init triangle", function() {
 
+        it("Init with wrong values", function() {
+
+            expect(
+                function () {
+                    new CTriangle({
+                        wrongparam: '#ddd',
+                        borderColorValue: '#ddd'
+                    });
+                }
+            ).to.throw(ReferenceError, 'Shape colors params required');
+
+            expect(
+                function () {
+                    new CTriangle({
+                        fillColorValue: 'ddd',
+                        borderColorValue: '#ddd'
+                    });
+                }
+            ).to.throw(RangeError, 'Invalid shape colors');
+
+            expect(
+                function () {
+                    new CTriangle({
+                        fillColorValue: '#ddd',
+                        borderColorValue: '#ddd'
+                    });
+                }
+            ).to.not.throw();
+
+            expect(
+                function () {
+                    new CTriangle(
+                        {fillColorValue: '#ddd', borderColorValue: '#ddd'},
+                        {x1: -10, y1: 20, x2: 200, y2: -1, x3: 20, y3: 100}
+                    );
+                }
+            ).to.throw(RangeError, "Invalid triangle params");
+
+        });
+
         it("Init with default values", function() {
 
             var triangle = new CTriangle();
@@ -199,18 +239,25 @@ describe("CTriangle testing", function() {
             assert.equal(triangle.y2, 20);
             assert.equal(triangle.x2, 40);
             assert.equal(triangle.y2, 20);
+            assert.equal(triangle.x3, 50);
+            assert.equal(triangle.y3, 60);
             assert.equal(triangle.fillColor, '#fff');
             assert.equal(triangle.borderColor, '#000');
         });
 
         it("Init with optional values", function() {
 
-            var triangle = new CTriangle('#ccc', '#000', 100, 200, 300, 200);
+            var triangle = new CTriangle(
+                {fillColorValue: '#ccc', borderColorValue: '#000'},
+                {x1: 100, y1: 200, x2: 300, y2: 200, x3: 400, y3: 500}
+            );
 
             assert.equal(triangle.x1, 100);
-            assert.equal(triangle.y2, 200);
+            assert.equal(triangle.y1, 200);
             assert.equal(triangle.x2, 300);
             assert.equal(triangle.y2, 200);
+            assert.equal(triangle.x3, 400);
+            assert.equal(triangle.y3, 500);
             assert.equal(triangle.fillColor, '#ccc');
             assert.equal(triangle.borderColor, '#000');
         });

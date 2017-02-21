@@ -57,19 +57,52 @@ ShapeProgram.prototype.ResetForm = function ()
 
 ShapeProgram.prototype.DisplayCircle = function (shapeColorParams, shapeParams)
 {
-    let circle = new CCircle(shapeColorParams, shapeParams);
+    let circle;
+    try
+    {
+        circle = new CCircle(shapeColorParams, shapeParams);
+    }
+    catch (e)
+    {
+        alert(e.message);
+        return;
+    }
+
     circle.draw(this.canvasAreaId);
 };
 
 ShapeProgram.prototype.DisplayRectangle = function (shapeColorParams, shapeParams)
 {
-    let rectangle = new CRectangle(shapeColorParams, shapeParams);
+    let rectangle;
+
+    try
+    {
+        rectangle = new CRectangle(shapeColorParams, shapeParams);
+    }
+    catch (e)
+    {
+        alert(e.message);
+        return;
+    }
+
     rectangle.draw(this.canvasAreaId);
 };
 
 ShapeProgram.prototype.DisplayTriangle = function (shapeColorParams, shapeParams)
 {
-    let triangle = new CTriangle(shapeColorParams, shapeParams);
+
+    let triangle;
+
+    try
+    {
+        triangle = new CTriangle(shapeColorParams, shapeParams);
+    }
+    catch (e)
+    {
+        alert(e.message);
+        return;
+    }
+
     triangle.draw(this.canvasAreaId);
 };
 

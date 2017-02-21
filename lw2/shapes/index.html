@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <title>Shapes</title>
   <script language="javascript" src="js/shapes_program.js"></script>
+  <script>
+    var shapeProgram = new ShapeProgram();
+  </script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="css/shapes.css">
 </head>
@@ -11,10 +14,8 @@
 
 <div class="container application-container">
   <div class="row">
-    <div class="jumbotron">
-      <h3>LW #2 (Shapes)</h3>
-      <p>Student PS-22 Kalagin Ivan</p>
-      <a href="https://github.com/lulldev/webdev-learn/tree/master/lw2/shapes" class="btn btn-default">See GitHub repo</a>
+    <div class="col-lg-12 text-center">
+      <h3><a href="#">LW2 - Shape drawing</a> by Kalagin Ivan (PS-22)</h3><br/>
     </div>
     <div class="col-lg-8">
       <label>Canvas output:</label>
@@ -24,7 +25,7 @@
       <label>Draw configurator:</label>
       <form class="form">
         <div class="form-group">
-          <select name="shape-type" class="form-control">
+          <select class="form-control shape-type">
             <option value="">Choose shape type</option>
             <option value="circle">Circle</option>
             <option value="rectangle">Rectangle</option>
@@ -32,15 +33,86 @@
           </select>
           <div class="help-block">Select type and input shape parameters</div>
         </div>
+
+        <div class="color-form">
+          <div class="form-group">
+            <label>Fill color:</label>
+            <input type="color" class="form-control fill-color" value="#ffffff" />
+          </div>
+          <div class="form-group">
+            <label>Background color:</label>
+            <input type="color" class="form-control bg-color" value="#000000" />
+          </div>
+        </div>
+
+        <div class="circle-form">
+          <div class="form-group">
+            <label>Radius:</label>
+            <input type="number" class="form-control radius" value="10" />
+          </div>
+          <div class="form-group">
+            <label>X-coord:</label>
+            <input type="number" class="form-control x-coord" value="150" />
+          </div>
+          <div class="form-group">
+            <label>Y-coord:</label>
+            <input type="number" class="form-control y-coord" value="200" />
+          </div>
+        </div>
+
+        <div class="rectangle-form">
+          <div class="form-group">
+            <label>X1-coord:</label>
+            <input type="number" class="form-control x1-coord" value="150" />
+          </div>
+          <div class="form-group">
+            <label>Y1-coord:</label>
+            <input type="number" class="form-control y1-coord" value="200" />
+          </div>
+          <div class="form-group">
+            <label>X2-coord:</label>
+            <input type="number" class="form-control x2-coord" value="130" />
+          </div>
+          <div class="form-group">
+            <label>Y2-coord:</label>
+            <input type="number" class="form-control y2-coord" value="90" />
+          </div>
+        </div>
+
+        <div class="triangle-form">
+          <div class="form-group">
+            <label>X1-coord:</label>
+            <input type="number" class="form-control x1-coord" value="150" />
+          </div>
+          <div class="form-group">
+            <label>Y1-coord:</label>
+            <input type="number" class="form-control y1-coord" value="200" />
+          </div>
+          <div class="form-group">
+            <label>X2-coord:</label>
+            <input type="number" class="form-control x2-coord" value="130" />
+          </div>
+          <div class="form-group">
+            <label>Y2-coord:</label>
+            <input type="number" class="form-control y2-coord" value="90" />
+          </div>
+          <div class="form-group">
+            <label>X3-coord:</label>
+            <input type="number" class="form-control x3-coord" value="110" />
+          </div>
+          <div class="form-group">
+            <label>Y3-coord:</label>
+            <input type="number" class="form-control y3-coord" value="190" />
+          </div>
+        </div>
+
+        <div class="form-group action-control-btns">
+          <a href="#" class="btn btn-md btn-success draw-shape">Draw shape!</a>
+          <a href="#" class="btn btn-md btn-danger reset-configurator">Reset form</a>
+        </div>
       </form>
     </div>
   </div>
-</div>
 
-<script>
-  ShapeProgram.InitProgram();
-  window.onload = function() {
-  };
-</script>
 </body>
 </html>

@@ -43,6 +43,7 @@ CCircle.prototype.calculatePerimeter = function() {
     return parseFloat((2 * Math.PI * this.radius).toFixed(2));
 };
 
-CCircle.prototype.draw = function() {
-
+CCircle.prototype.draw = function(canvasAreaId) {
+    this.canvasArea = document.querySelector("#" + canvasAreaId);
+    console.log(canvasAreaId);
 };

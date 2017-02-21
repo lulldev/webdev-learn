@@ -1,7 +1,10 @@
 'use strict';
 
-function ShapeProgram()
+function ShapeProgram(canvasArea)
 {
+    canvasArea === undefined ?
+        this.canvasArea = "#canvas-area" : this.canvasArea = canvasArea;
+
     this.LoadScript('js/shapes/shape.js');
     this.LoadScript('js/shapes/circle.js');
     this.LoadScript('js/shapes/rectangle.js');
@@ -50,6 +53,26 @@ ShapeProgram.prototype.ResetForm = function ()
     {
         controlForms[formName].style.display = "none";
     }
+};
+
+ShapeProgram.prototype.DrawCircle = function (shapeColorParams, shapeParams)
+{
+    // this.canvasArea
+    console.log(arguments);
+};
+
+ShapeProgram.prototype.DrawRectangle = function (shapeColorParams, shapeParams)
+{
+    // this.canvasArea
+    console.log(arguments);
+
+};
+
+ShapeProgram.prototype.DrawTriangle = function (shapeColorParams, shapeParams)
+{
+    // this.canvasArea
+    console.log(arguments);
+
 };
 
 

@@ -11,7 +11,7 @@ function ShapeProgram(canvasAreaId)
     this.LoadScript('js/shapes/shape.js');
     this.LoadScript('js/shapes/triangle.js');
 
-    this.LoadScript('js/shapes/program/events.js');
+    this.LoadScript('js/program/events.js');
 }
 
 /*

@@ -61,13 +61,13 @@ ShapeProgram.prototype.UpdateAreaAndPerimeter = function (area, perimeter)
     document.getElementsByClassName('shape-perimeter')[0].innerHTML = perimeter;
 };
 
-ShapeProgram.prototype.DisplayCircle = function (shapeColorParams, shapeParams)
+ShapeProgram.prototype.DisplayShape = function (shapeObj, shapeColorParams, shapeParams)
 {
-    let circle;
+    let shape;
 
     try
     {
-        circle = new CCircle(shapeColorParams, shapeParams);
+        shape = new shapeObj(shapeColorParams, shapeParams);
     }
     catch (e)
     {
@@ -75,46 +75,11 @@ ShapeProgram.prototype.DisplayCircle = function (shapeColorParams, shapeParams)
         return;
     }
 
-    circle.draw(this.canvasAreaId);
-    this.UpdateAreaAndPerimeter(circle.calculateArea(), circle.calculatePerimeter());
+    shape.draw(this.canvasAreaId);
+    this.UpdateAreaAndPerimeter(shape.calculateArea(), shape.calculatePerimeter());
 };
 
-ShapeProgram.prototype.DisplayRectangle = function (shapeColorParams, shapeParams)
-{
-    let rectangle;
 
-    try
-    {
-        rectangle = new CRectangle(shapeColorParams, shapeParams);
-    }
-    catch (e)
-    {
-        alert(e.message);
-        return;
-    }
-
-    rectangle.draw(this.canvasAreaId);
-    this.UpdateAreaAndPerimeter(rectangle.calculateArea(), rectangle.calculatePerimeter());
-};
-
-ShapeProgram.prototype.DisplayTriangle = function (shapeColorParams, shapeParams)
-{
-
-    let triangle;
-
-    try
-    {
-        triangle = new CTriangle(shapeColorParams, shapeParams);
-    }
-    catch (e)
-    {
-        alert(e.message);
-        return;
-    }
-
-    triangle.draw(this.canvasAreaId);
-    this.UpdateAreaAndPerimeter(triangle.calculateArea(), triangle.calculatePerimeter());
-};
 
 
 

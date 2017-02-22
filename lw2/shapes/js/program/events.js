@@ -53,7 +53,8 @@ document.getElementsByClassName('draw-shape')[0].addEventListener("click", funct
                 centerX: parseFloat(document.getElementsByClassName('circle-x-coord')[0].value.toString()),
                 centerY: parseFloat(document.getElementsByClassName('circle-y-coord')[0].value.toString())
             };
-            shapeProgram.DisplayCircle(shapeColorParams, shapeParams);
+            shapeProgram.DisplayShape(CCircle, shapeColorParams, shapeParams);
+
             break;
         case "rectangle":
             shapeParams = {
@@ -62,7 +63,8 @@ document.getElementsByClassName('draw-shape')[0].addEventListener("click", funct
                 x2: parseFloat(document.getElementsByClassName('rectangle-x2-coord')[0].value.toString()),
                 y2: parseFloat(document.getElementsByClassName('rectangle-y2-coord')[0].value.toString())
             };
-            shapeProgram.DisplayRectangle(shapeColorParams, shapeParams);
+            shapeProgram.DisplayShape(CRectangle, shapeColorParams, shapeParams);
+
             break;
         case "triangle":
             shapeParams = {
@@ -73,7 +75,8 @@ document.getElementsByClassName('draw-shape')[0].addEventListener("click", funct
                 x3: parseFloat(document.getElementsByClassName('triangle-x3-coord')[0].value.toString()),
                 y3: parseFloat(document.getElementsByClassName('triangle-y3-coord')[0].value.toString())
             };
-            shapeProgram.DisplayTriangle(shapeColorParams, shapeParams);
+            shapeProgram.DisplayShape(CTriangle, shapeColorParams, shapeParams);
+
             break;
     }
 });

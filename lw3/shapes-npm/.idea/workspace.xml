@@ -150,6 +150,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="prop_add_unversioned_files" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -224,12 +225,12 @@
       <workItem from="1487137281994" duration="3181000" />
       <workItem from="1487604243139" duration="32429000" />
       <workItem from="1488278042378" duration="2425000" />
-      <workItem from="1488304657109" duration="71000" />
+      <workItem from="1488304657109" duration="276000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38364000" />
+    <option name="totallyTimeSpent" value="38569000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="6" />
